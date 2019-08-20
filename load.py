@@ -93,7 +93,7 @@ def load_systems():
             this.systems = [row[0] for row in csvreader if row[0] not in known_list_headers]
             set_settings_route_label(this.systems)
             print "Route Helper - load_systems() loaded systems from \"{}\"".format(route_filename)
-            # print "Route: " + ", ".join(this.systems)
+            print "Route: " + ", ".join(this.systems)
     except:
         this.systems = []
         this.systems_label_text.set("")
