@@ -78,10 +78,14 @@ def load_systems():
     Make a list of systems to visit from the csv or text file specified in the config (if specified)
     """
     route_filename = config.get('RouteHelperPlugin_RouteFileLocationSetting')
+    known_list_headers = [
+        "System Name",
+        ]
+
     try:
         with open(route_filename, "r") as route_file:
             csvreader = csv.reader(route_file)
-            this.systems = [row[0] for row in csvreader]
+            this.systems = [row[0] for row in csvreader if row[0] not in known_list_headers]
             print "Route Helper - load_systems() loaded systems from \"{}\"".format(route_filename)
             print "Route: " + ", ".join(this.systems)
     except:
