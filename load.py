@@ -58,9 +58,9 @@ def plugin_prefs(parent, cmdr, is_beta):
         this.route_file_location_setting.set("")
 
     nb.Label(frame, text="Route File Location: ").grid(row=0, padx=PADX, pady=PADY, sticky=tk.E)
-    nb.Entry(frame, textvariable=this.route_file_location_setting).grid(row=0, column=1, columnspan=2, sticky=tk.EW)
-    nb.Button(frame, text="Select Route File", command=select_csv_file).grid(row=0, column=3, padx=PADX, pady=PADY, sticky=tk.EW)
-    nb.Button(frame, text="Clear Route File", command=clear_csv_file).grid(row=1, column=3, padx=PADX, pady=PADY, sticky=tk.EW)
+    nb.Entry(frame, textvariable=this.route_file_location_setting).grid(row=0, column=1, sticky=tk.EW)
+    nb.Button(frame, text="Select Route File", command=select_csv_file).grid(row=0, column=2, columnspan=2, padx=PADX, pady=PADY, sticky=tk.EW)
+    nb.Button(frame, text="Clear Route File", command=clear_csv_file).grid(row=1, column=2, columnspan=2, padx=PADX, pady=PADY, sticky=tk.EW)
 
     return frame
 
