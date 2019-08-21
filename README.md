@@ -12,14 +12,6 @@ The plugin takes a list of systems, and when you jump into a system in the list 
 
 You will need to re-start EDMC for it to notice the new plugin.
 
-## Additional Requirements 
-
-Pyperclip (for paste functionality) requires:
-* On Windows, no additional modules are needed.
-* On Mac, this module makes use of the pbcopy and pbpaste commands, which should come with the os.
-* On Linux, this module makes use of the xclip or xsel commands, which should come with the os. Otherwise run "sudo apt-get install xclip" or "sudo apt-get install xsel" (Note: xsel does not always seem to work.)
-    Otherwise on Linux, you will need the gtk or PyQt4 modules installed.
-
 ## Usage
 
 * On EDMC's Route Helper settings tab press the “Select Route File” button.
