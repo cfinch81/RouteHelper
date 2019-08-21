@@ -51,6 +51,9 @@ def plugin_prefs(parent, cmdr, is_beta):
     frame.columnconfigure(1, weight=1)
 
     def select_route_file_handler():
+        """
+        Handle Select Route File button click event
+        """
         file_selection = tkFileDialog.askopenfilename(filetypes=[("Supported files","*.csv *.txt"),("CSV files","*.csv"),("Text files","*.txt"),("All files","*.*")])
         if file_selection:
             this.route_file_location_setting.set(file_selection)
@@ -58,6 +61,9 @@ def plugin_prefs(parent, cmdr, is_beta):
 
 
     def clear_route_file_handler():
+        """
+        Handle Clear Route File button click event
+        """
         this.route_file_location_setting.set("")
         load_systems()
 
@@ -101,7 +107,7 @@ def load_systems():
 
 def copy_next_system(current_system):
     """
-    Copy the next system to the clipboard if we're currently in a system in the systems list
+    Copy the next system to the clipboard if current_system is in the systems list
     """
     try:
         system_index = this.systems.index(current_system)
