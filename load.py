@@ -50,21 +50,21 @@ def plugin_prefs(parent, cmdr, is_beta):
     frame = nb.Frame(parent)
     frame.columnconfigure(1, weight=1)
 
-    def select_csv_file():
+    def select_route_file_handler():
         file_selection = tkFileDialog.askopenfilename(filetypes=[("Supported files","*.csv *.txt"),("CSV files","*.csv"),("Text files","*.txt"),("All files","*.*")])
         if file_selection:
             this.route_file_location_setting.set(file_selection)
             load_systems()
 
 
-    def clear_csv_file():
+    def clear_route_file_handler():
         this.route_file_location_setting.set("")
         load_systems()
 
     nb.Label(frame, text="Route File Location: ").grid(row=0, padx=PADX, pady=PADY, sticky=tk.E)
     nb.Entry(frame, textvariable=this.route_file_location_setting).grid(row=0, column=1, sticky=tk.EW)
-    nb.Button(frame, text="Select Route File", command=select_csv_file).grid(row=0, column=2, columnspan=2, padx=PADX, pady=PADY, sticky=tk.EW)
-    nb.Button(frame, text="Clear Route File", command=clear_csv_file).grid(row=1, column=2, columnspan=2, padx=PADX, pady=PADY, sticky=tk.EW)
+    nb.Button(frame, text="Select Route File", command=select_route_file_handler).grid(row=0, column=2, columnspan=2, padx=PADX, pady=PADY, sticky=tk.EW)
+    nb.Button(frame, text="Clear Route File", command=clear_route_file_handler).grid(row=1, column=2, columnspan=2, padx=PADX, pady=PADY, sticky=tk.EW)
     nb.Label(frame, text="Route: ").grid(row=2, padx=PADX, pady=PADY, sticky=tk.NE)
     nb.Label(frame, textvariable=this.systems_label_text).grid(row=2, column=1, columnspan=2, sticky=tk.EW)
 
